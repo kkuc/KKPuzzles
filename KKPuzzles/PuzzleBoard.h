@@ -32,8 +32,8 @@
 @property(nonatomic, assign) IBOutlet __nullable id<PuzzleBoardDelegate> delegate;
 @property(nonatomic, readonly, getter=isCompleted) BOOL completed;
 
--(void)shuffle;
+-(void)shuffle:(BOOL)animated;
 -(void)reload;
--(void)redraw;
+-(void)redraw:(BOOL)animated;
 
 @end

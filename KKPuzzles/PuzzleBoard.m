@@ -87,7 +87,7 @@ typedef enum : NSUInteger {
     }];
 }
 
--(void)redraw:(BOOL)animate {
+-(void)redraw:(BOOL)animated {
     
     for (UIView* view in self.subviews) {
         [view removeFromSuperview];
@@ -117,7 +117,7 @@ typedef enum : NSUInteger {
     
     for (Tile *tile in tiles) {
         
-        [UIView animateWithDuration:animate ? 0.6 : 0
+        [UIView animateWithDuration:animated ? 0.6 : 0
                          animations:^{
                              tile.frame = (CGRect){tile.holder.position.x, tile.holder.position.y, tileWidth, tileHeight};
                          }];
@@ -145,9 +145,9 @@ typedef enum : NSUInteger {
     [self.delegate respondsToSelector:@selector(boardCompleted:)] ? [self.delegate boardCompleted:self] : nil;
 }
 
--(void)shuffle {
+-(void)shuffle:(BOOL)animated {
     [self shuffleTiles];
-    [self redraw:true];
+    [self redraw:animated];
 }
 
 
