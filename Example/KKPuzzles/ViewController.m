@@ -42,12 +42,12 @@
 }
 
 -(IBAction)shuffleBoard:(id)sender {
-    [self.board shuffle];
+    [self.board shuffle:true];
 }
 
 -(void)orientationChanged {
     [self.view layoutIfNeeded];
-    [self.board redraw];
+    [self.board redraw:true];
 }
 
 #pragma mark - Puzzle board data source
